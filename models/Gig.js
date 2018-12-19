@@ -16,18 +16,8 @@ const Gig = db.define('gigs',{
     },
     contact_email: {
         type: Sequelize.STRING
-    },
+    }
 
 });
-
-// console.log(" dataaa"+Gig.findAll());
-
-//  Gig.findById(2)
-//  .then(result => console.log(result))
-//  .catch(error => console.log(error));
-
-
-// db.sync();
-
 
 module.exports = Gig;

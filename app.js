@@ -1,17 +1,15 @@
 const express = require('express');
 const exphbs= require('express-handlebars');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser')
 const path = require('path');
 const db = require('./config/database');
 const gigs = require('./route/gigs');
 
-//Test DB
-db
-  .authenticate()
-  .then(() => console.log('Database Connected . . . '))
-  .catch(err => console.error('Error : ', err));
 
 const app = express();
+app.set('view engine','ejs');
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 
 app.get('/',(req,res)=> {
 	res.send('index');
