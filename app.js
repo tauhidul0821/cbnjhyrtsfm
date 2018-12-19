@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const db = require('./config/database');
 const gigs = require('./route/gigs');
+const product = require('./route/product');
 
 
 const app = express();
@@ -16,6 +17,7 @@ app.get('/',(req,res)=> {
 });
 
 app.use('/gigs',gigs);
+app.use('/product',product);
 
 
 const PORT = process.env.PORT || 1337;
