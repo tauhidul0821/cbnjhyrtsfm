@@ -9,9 +9,7 @@ router.get('/',(req,res)=>{
     Products.findAll(
         {
             where: {
-                deletedAt: {
-                   [Op.ne]: "deleted",
-                }
+                deletedAt: 'active'
             }
         }
     )
@@ -26,8 +24,14 @@ router.get('/',(req,res)=>{
 
 //GetById
 router.get('/:id',(req,res)=>{
-	let id = req.params.id;
-    Products.findById(id)
+    Products.findAll(
+        {
+            where: {
+                id:req.params.id,
+                deletedAt: 'active'
+            }
+        }
+    )
     .then(Products =>{
        //console.log(Products);
        //res.sendStatus(200);
