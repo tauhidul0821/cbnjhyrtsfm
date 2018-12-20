@@ -10,7 +10,7 @@ router.get('/',(req,res)=>{
         {
             where: {
                 deletedAt: {
-                   [Op.ne]: "null",
+                   [Op.ne]: "deleted",
                 }
             }
         }
@@ -91,7 +91,7 @@ router.put('/:id',(req,res)=>{
 
 router.delete('/:id',(req,res)=>{
     Products.update({
-        deletedAt:'2018-12-19 10:47:48'
+        deletedAt:'deleted'
       }, {
         where: {
           id: req.params.id

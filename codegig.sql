@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2018 at 03:33 AM
+-- Generation Time: Dec 20, 2018 at 03:52 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.1.23
 
@@ -67,7 +67,7 @@ CREATE TABLE `products` (
   `contact_email` varchar(255) NOT NULL,
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
-  `deletedAt` datetime DEFAULT NULL
+  `deletedAt` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -75,8 +75,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `technologies`, `description`, `budget`, `contact_email`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
-(1, 'Allah', 'ieiie', 'sdfsf', 'tuhin@gmail.com', 'fffff', '2018-12-19 00:00:00', '2018-12-19 10:52:41', '2018-12-19 04:47:48'),
-(2, 'Allah Humma', 'ieiie', 'sdfsf', 'tuhin@gmail.com', 'fffff', '2018-12-19 10:45:28', '2018-12-19 10:47:48', NULL);
+(1, 'Allah', 'ieiie', 'sdfsf', 'tuhin@gmail.com', 'fffff', '2018-12-19 00:00:00', '2018-12-19 10:52:41', 'deleted'),
+(2, 'Allah Humma', 'ieiie', 'sdfsf', 'tuhin@gmail.com', 'fffff', '2018-12-19 10:45:28', '2018-12-19 10:47:48', 'active'),
+(3, 'alo', 'ieiie', 'sdfsf', 'alo@gmail.com', 'fffff', '2018-12-20 02:51:29', '2018-12-20 02:51:55', 'deleted');
 
 --
 -- Indexes for dumped tables
@@ -108,7 +109,7 @@ ALTER TABLE `gigs`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

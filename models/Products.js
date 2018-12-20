@@ -37,9 +37,9 @@ const Products = db.define('products',{
         }
     },
     deletedAt:{
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: true,
-        defaultValue: null
+        defaultValue: "active"
     }
 });
 
